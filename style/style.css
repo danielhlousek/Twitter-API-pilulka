@@ -1,0 +1,15 @@
+body {
+    background-color: #b6effb;;
+}
+.posts {
+    width: 50%;
+}
+
+.author-username {
+    background-color: #0dcaf0;
+}
+
+footer {
+    padding: 30px 20px;
+    background-color: #0dcaf0;
+}

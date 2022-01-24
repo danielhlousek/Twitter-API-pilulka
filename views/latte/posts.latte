@@ -1,0 +1,29 @@
+{layout 'layouts/layout.latte'}
+
+{block content}
+    <h1>Last {$postCount} twitter posts including pilulka</h1>
+    <h2 class="result-count">Found {$posts['resultCount']} tweets in last 7 days.</h2>
+    <div class="posts">
+        {foreach $posts['post'] as $key => $post}
+            <div class="card">
+                <div class="author-username card-header">
+                    {$post['user']?->username}
+                </div>
+                <div class="post-text card-body">
+                    {$post['data']?->text}
+                </div>
+                <div class="metrics card-footer">
+                    <span class="retweeted">
+                        Retweeted:
+                        {$post['data']?->public_metrics->retweet_count}
+                    </span>
+                    <span class="retweeted">
+                        Likes:
+                        {$post['data']?->public_metrics->like_count}
+                    </span>
+                </div>
+            </div>
+            </br>
+        {/foreach}
+    </div>
+{/block}

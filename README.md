@@ -4,6 +4,8 @@
 
 Celá aplikace běží v dockeru v jednom containeru
 
+Je třeba vyplnit klíče dev účtu twitteru v souboru .env pro připojení k api.
+
 ### Build
 ```sh
 docker-compose up
@@ -20,8 +22,6 @@ composer install
 composer run post-update-cmd
 ```
 
-Dále je třeba vyplnit klíče dev účtu twitteru v souboru .env pro připojení k api
-
 Aplikace běží na adrese http://localhost:8080/
 
 K dispozici jsou tyto url:
@@ -33,6 +33,6 @@ Nechtěl jsem pro toto řešení použít žádný velký FW, tak jsem použil t
 který jsem lehce upravil.
 
 Pro napojení na twitter api jsem použil https://github.com/noweh/twitter-api-v2-php - používá api v2 a tweets/search/recent endpoint - bez academic developer účtu 
-vrací bohužel jen tweety, za posledních 7 dní (proto jich není 100). Jiné vhodnější endpointy vracející více výsledků nelze použít se základním developer účtem.
+vrací bohužel jen tweety, za posledních 7 dní (proto jich není 100). Jiné vhodnější endpointy (/2/tweets/search/all) vracející více výsledků nelze použít se základním developer účtem.
 
 Dále jsem použil šablony latte a bootstrap.

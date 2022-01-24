@@ -1,0 +1,13 @@
+{
+    "require": {
+        "noweh/twitter-api-v2-php": "^1.4",
+        "latte/latte": "^2.10",
+        "twbs/bootstrap": "^5.1"
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "rm -rf public/bootstrap",
+            "cp -R vendor/twbs/bootstrap/dist style/bootstrap"
+        ]
+    }
+}
